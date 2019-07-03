@@ -80,3 +80,8 @@ notebooks/
 Pycharm
 .idea/
 urbvan/db.sqlite3
+
+# Commitizen
+node_modules/
+package-lock.json
+package.json
