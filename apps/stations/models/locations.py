@@ -4,7 +4,7 @@ from django.db import models
 from apps.utils import create_id
 
 
-class LocationModel(models.Model):
+class Location(models.Model):
     """ Location object is the representation of physical station
 
         Fields:

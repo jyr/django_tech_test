@@ -1,13 +1,13 @@
 # coding: utf8
 import factory
 
-from .models import LocationModel
+from .models import Location
 
 
 class LocationFactory(factory.django.DjangoModelFactory):
 
     class Meta:
-        model = LocationModel
+        model = Location
 
     name = factory.Faker('slug')
     latitude = factory.Faker('latitude')

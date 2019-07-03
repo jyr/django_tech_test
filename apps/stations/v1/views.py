@@ -4,11 +4,11 @@ from urbvan_framework.views import ListCreateView
 from .schemas import LocationSchema
 from .serializers import LocationSerializer
 
-from ..models import LocationModel
+from ..models import Location
 
 
 class LocationView(ListCreateView):
 
-    queryset = LocationModel.objects.all()
+    queryset = Location.objects.all()
     schema_class = LocationSchema
     serializer_class = LocationSerializer
