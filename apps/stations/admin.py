@@ -1,3 +1,5 @@
 from django.contrib import admin
+from apps.stations.models import Station, Location
 
-# Register your models here.
+admin.site.register(Station)
+admin.site.register(Location)
