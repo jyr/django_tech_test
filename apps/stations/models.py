@@ -5,10 +5,6 @@ from django.db import models
 
 from apps.utils import create_id
 
-@receiver(pre_save)
-def pre_save(sender, instance, *args, **kwargs):
-    instance.id = create_id(instance.prefix)
-
 class Location(models.Model):
     """ Location object is the representation of physical station
 
@@ -49,3 +45,8 @@ class Station(models.Model):
     def prefix(self):
         prefix = self.__class__.__name__.lower()[0:3] + '_'
         return prefix
+
+@receiver(pre_save, sender=Location)
+@receiver(pre_save, sender=Station)
+def pre_save(sender, instance, *args, **kwargs):
+    instance.id = create_id(instance.prefix)
