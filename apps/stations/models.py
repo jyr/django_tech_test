@@ -23,3 +23,13 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Station(models.Model):
+    ## TODO: add docstring
+
+    id = models.CharField(default=create_id('sta_'), primary_key=True,
+                          max_length=30, unique=True)
+    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
+    order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
