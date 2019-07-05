@@ -17,7 +17,7 @@ class Location(models.Model):
     """
 
     id = models.CharField(primary_key=True, max_length=30, unique=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     latitude = models.DecimalField(max_digits=19, decimal_places=16)
     longitude = models.DecimalField(max_digits=19, decimal_places=16)
 
@@ -34,12 +34,16 @@ class Station(models.Model):
     ## TODO: add docstring
 
     id = models.CharField(primary_key=True, max_length=30, unique=True)
-    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
+    location = models.ForeignKey(
+        'stations.Location',
+        on_delete=models.DO_NOTHING,
+        related_name='stations'
+    )
     order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.id + self.location.name
+        return self.id + ' / ' + self.location.name
 
     @property
     def prefix(self):
@@ -49,4 +53,5 @@ class Station(models.Model):
 @receiver(pre_save, sender=Location)
 @receiver(pre_save, sender=Station)
 def pre_save(sender, instance, *args, **kwargs):
-    instance.id = create_id(instance.prefix)
+    if not sender.objects.filter(pk=instance.id).exists():
+        instance.id = create_id(instance.prefix)
