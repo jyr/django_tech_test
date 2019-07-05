@@ -10,18 +10,21 @@ from ..models import Location, Station
 
 
 class LocationEndpoint(ListCreateView):
+    """This class handles GET and POST methods."""
 
     queryset = Location.objects.all()
     schema_class = LocationSchema
     serializer_class = LocationSerializer
 
 class LocationDetailEndpoint(RetrieveUpdateDestroyAPIView):
+    """This class handles GET, PUT, PATCH and DELETE methods."""
 
     queryset = Location.objects.all()
     schema_class = LocationSchema
     serializer_class = LocationSerializer
 
 class StationEndpoint(ListCreateView):
+    """This class handles GET and POST methods."""
 
     queryset = Station.objects.all()
     schema_class = StationSchema
@@ -29,6 +32,7 @@ class StationEndpoint(ListCreateView):
 
 
 class StationDetailEndpoint(RetrieveUpdateDestroyAPIView):
+    """This class handles GET, PUT, PATCH and DELETE methods."""
 
     queryset = Station.objects.all()
     schema_class = StationSchema
