@@ -11,4 +11,8 @@ urlpatterns = [
         ('apps.stations.api_v1.urls', 'api_v1'),
         namespace='api_v1_stations')
 	),
+    path('api/v1/', include(
+        ('apps.lines.api_v1.urls', 'api_v1'),
+        namespace='api_v1_lines')
+	),
 ]
