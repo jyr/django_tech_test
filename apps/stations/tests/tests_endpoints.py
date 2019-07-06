@@ -1,5 +1,6 @@
 # coding: utf8
 from django.urls import reverse
+from django.test import TestCase, tag
 
 from rest_framework.test import APITestCase
 from rest_framework import status
@@ -8,7 +9,7 @@ from apps.users.factories import (UserFactory, TokenFactory)
 from apps.stations.factories import LocationFactory, StationFactory
 from apps.stations.models import Location, Station
 
-
+@tag('endpoints')
 class LocationEndpointTest(APITestCase):
 
     url = reverse("api_v1_stations:v1_list_create_location")
@@ -48,6 +49,8 @@ class LocationEndpointTest(APITestCase):
         response = self.client.post(self.url, data, format='json')
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
 
+
+@tag('endpoints')
 class LocationDetailEndpointTest(APITestCase):
 
     def setUp(self):
@@ -129,6 +132,8 @@ class LocationDetailEndpointTest(APITestCase):
         self.assertTrue(len(locations) == 1)
         self.assertFalse(deleted_location)
 
+
+@tag('endpoints')
 class StationEndpointTest(APITestCase):
     url = reverse("api_v1_stations:v1_list_create_station")
 
@@ -168,6 +173,8 @@ class StationEndpointTest(APITestCase):
         response = self.client.post(self.url, data, format='json')
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
 
+
+@tag('endpoints')
 class StationDetailEndpointTest(APITestCase):
 
     def setUp(self):
@@ -244,14 +251,22 @@ class StationDetailEndpointTest(APITestCase):
         self.assertTrue(len(stations) == 1)
         self.assertFalse(deleted_station)
 
+
+@tag('endpoints')
 class LineEndpointTest(APITestCase):
     pass
 
+
+@tag('endpoints')
 class LineDetailEndpointTest(APITestCase):
     pass
 
+
+@tag('endpoints')
 class RouteEndpointTest(APITestCase):
     pass
 
+
+@tag('endpoints')
 class RouteDetailEndpointTest(APITestCase):
     pass
