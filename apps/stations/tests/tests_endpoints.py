@@ -82,9 +82,11 @@ class LocationDetailEndpointTest(APITestCase):
 
         response = self.client.put(self.url, data, format='json')
         new_name_location = response.data['body']['results'][0]['name']
+        self.location.refresh_from_db()
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEquals(new_name_location, 'My new location')
+        self.assertEquals(self.location.name, new_name_location)
 
     def test_patch_a_location(self):
         """Test api can partial update a location."""
@@ -94,18 +96,42 @@ class LocationDetailEndpointTest(APITestCase):
         }
 
         response = self.client.patch(self.url, data, format='json')
-        new_name_location = '{0:f}'.format(response.data['body']['results'][0]['latitude'])
+        new_latitude_location = '{0:f}'.format(response.data['body']['results'][0]['latitude'])
+        self.location.refresh_from_db()
 
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEquals(new_name_location, '0.0000000000000300')
+        self.assertEquals(new_latitude_location, '0.0000000000000300')
+        self.assertEquals('{0:f}'.format(self.location.latitude), new_latitude_location)
 
     def test_delete_alocation(self):
         """Test api can delete a location."""
 
+        new_location = LocationFactory()
+
+        locations = Location.objects.all()
         location_id = self.location.id
         response = self.client.delete(self.url, format='json')
-        exists = Location.objects.filter(id=location_id).exists()
+        deleted_location = Location.objects.filter(id=location_id).exists()
 
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEquals(exists, False)
+        self.assertTrue(len(locations) == 1)
+        self.assertFalse(deleted_location)
+
+class StationEndpointTest(APITestCase):
+    pass
+
+class StationDetailEndpointTest(APITestCase):
+    pass
+
+class LineEndpointTest(APITestCase):
+    pass
+
+class LineDetailEndpointTest(APITestCase):
+    pass
+
+class RouteEndpointTest(APITestCase):
+    pass
+
+class RouteDetailEndpointTest(APITestCase):
+    pass
