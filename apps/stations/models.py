@@ -43,7 +43,7 @@ class Station(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.id + ' / ' + self.location.name
+        return self.id
 
     @property
     def prefix(self):
