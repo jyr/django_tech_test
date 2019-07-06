@@ -21,6 +21,9 @@ class Location(models.Model):
     latitude = models.DecimalField(max_digits=19, decimal_places=16)
     longitude = models.DecimalField(max_digits=19, decimal_places=16)
 
+    class Meta:
+        ordering = ('-id',)
+        
     def __str__(self):
         return self.name
 
@@ -41,6 +44,9 @@ class Station(models.Model):
     )
     order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('-id',)
 
     def __str__(self):
         return self.id
