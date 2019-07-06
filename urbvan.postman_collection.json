@@ -1,0 +1,819 @@
+{
+	"info": {
+		"name": "urbvan",
+		"_postman_id": "396469af-65f6-cfcd-d8bf-596dab9b683f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-token-auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api-token-auth/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api-token-auth",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/locations/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laa\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/locations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/locations/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laapost\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/locations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/locations/:id/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laa\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_201975346169180d1fe/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"loc_201975346169180d1fe",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/locations/:id/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"put1\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_201975346169180d1fe/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"loc_201975346169180d1fe",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/locations/:id/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laapatch\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_20197445414d016424/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"loc_20197445414d016424",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/locations/:id/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laapatch\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_20197445414d016424/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"loc_20197445414d016424",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/stations/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/stations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/stations/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "location",
+							"value": "loc_2019754374895092864",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/stations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/stations/:id/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laa\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						"sta_2019762443423d573b2",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/stations/:id/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"location\": \"loc_2019754374895092864\",\n                \"id\": \"sta_2019762443423d573b2\",\n                \"order\": 10,\n                \"is_active\": false\n            }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						"sta_2019762443423d573b2",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/stations/:id/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"location\": \"loc_2019754374895092864\",\n                \"id\": \"sta_2019762443423d573b2\",\n                \"order\": 10,\n                \"is_active\": falsesss\n            }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						"sta_2019762443423d573b2",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/stations/:id/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"location\": \"loc_2019754374895092864\",\n                \"id\": \"sta_2019762443423d573b2\",\n                \"order\": 10,\n                \"is_active\": false\n            }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						"sta_2019762443423d573b2",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/lines/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "l2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "blanco",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/lines/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"lines",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/lines/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "l2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "negro",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/lines/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"lines",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/lines/:id/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "l2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "blanco",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544328c0870b8c/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"lines",
+						"lin_20197544328c0870b8c",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/lines/:id/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "l2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "blancos",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544328c0870b8c/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"lines",
+						"lin_20197544328c0870b8c",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/lines/:id/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "l2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "blancos",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544328c0870b8c/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"lines",
+						"lin_20197544328c0870b8c",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/lines/:id/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "l2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "blancos",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544239f1e68d10/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"lines",
+						"lin_20197544239f1e68d10",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
