@@ -17,3 +17,19 @@ def create_id(identifier):
         str(uuid4())[:8]
     )
     return id_base
+
+def tenant_db_from_request(request):
+    method = request.method
+    map = methods_map()
+    db = map.get(method)
+
+    return db
+
+def methods_map():
+    return {
+        "GET": "read",
+        "POST": "write",
+        "PUT": "write",
+        "PATCH": "write",
+        "DELETE": "write"
+    }
