@@ -1,0 +1,5 @@
+Django==2.1.2
+uwsgi==2.0.17.1
+djangorestframework==3.8.2
+marshmallow==2.15.6
+factory-boy==2.11.1
