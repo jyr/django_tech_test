@@ -9,7 +9,8 @@ RUN apk update \
     && apk add zlib-dev \
     && apk add libffi-dev \
     && apk add curl \
-    && apk add vim
+    && apk add vim \
+    && apk add uwsgi-python
 
 # install pypi packages
 COPY requirements.txt /requirements.txt
@@ -21,5 +22,6 @@ WORKDIR /var/www/html/
 
 USER 1000:1000
 
-#CMD ["uwsgi", "--ini", "/uwsgi.ini"]
-CMD ["uwsgi", "--http", ":8000", "--chdir", "/var/www/html/", "--module", "urbvan.wsgi"]
+COPY uwsgi.ini /uwsgi.ini
+
+CMD ["uwsgi", "--ini", "/uwsgi.ini"]

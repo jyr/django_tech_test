@@ -5,6 +5,9 @@ services:
     build: ./docker/nginx
     ports:
       - 80:80
+    networks:
+      urbvan:
+        ipv4_address: 10.10.0.2
     volumes:
       - ./app:/var/www/html
     working_dir: /etc/nginx
@@ -15,9 +18,20 @@ services:
     build: ./docker/python
     ports:
       - 8000:8000
+    networks:
+      urbvan:
+        ipv4_address: 10.10.0.3
     volumes:
       - ./app:/var/www/html
     working_dir: /var/www/html
 
 volumes:
   data-volume:
+
+networks:
+  urbvan:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 10.10.0.0/24
