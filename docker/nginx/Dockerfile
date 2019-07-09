@@ -5,4 +5,3 @@ RUN apk update \
     && apk add vim
 
 COPY uwsgi_nginx.conf /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/nginx.conf
