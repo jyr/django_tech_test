@@ -149,8 +149,6 @@ class StationEndpointTest(APITestCase):
         self.user = UserFactory()
         self.user_token = TokenFactory(user=self.user)
         self.location = LocationFactory(owner=self.user)
-        for _ in range(3):
-            StationFactory(location_id=1, owner_id=1)
 
         self.client.credentials(
             HTTP_AUTHORIZATION="Urbvan {}".format(self.user_token.key)
@@ -158,6 +156,9 @@ class StationEndpointTest(APITestCase):
 
     def test_get_all_stations(self):
         """Test api can all stations."""
+
+        for _ in range(3):
+            StationFactory(owner=self.user, location=self.location)
 
         response = self.client.get(self.url)
         response = response.json()

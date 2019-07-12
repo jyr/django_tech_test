@@ -17,7 +17,7 @@ class LocationEndpoint(ListCreateView):
     queryset = Location.objects.all()
     schema_class = LocationSchema
     serializer_class = LocationSerializer
-
+    model_class = Location
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -29,6 +29,7 @@ class LocationDetailEndpoint(RetrieveUpdateDestroyAPIView):
     queryset = Location.objects.all()
     schema_class = LocationSchema
     serializer_class = LocationSerializer
+    model_class = Location
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -40,6 +41,10 @@ class StationEndpoint(ListCreateView):
     queryset = Station.objects.all()
     schema_class = StationSchema
     serializer_class = StationSerializer
+    model_class = Station
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class StationDetailEndpoint(RetrieveUpdateDestroyAPIView):
@@ -48,4 +53,4 @@ class StationDetailEndpoint(RetrieveUpdateDestroyAPIView):
     queryset = Station.objects.all()
     schema_class = StationSchema
     serializer_class = StationSerializer
-    
+    model_class = Station

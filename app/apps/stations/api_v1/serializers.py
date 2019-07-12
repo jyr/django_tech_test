@@ -12,7 +12,8 @@ class LocationSerializer(serializers.ModelSerializer):
         fields = ('name', 'owner','latitude', 'longitude')
 
 class StationSerializer(serializers.ModelSerializer):
-
+    owner = serializers.ReadOnlyField(source='owner.username')
+    
     class Meta:
         model = Station
-        exclude = ('id', )
+        fields = ('order', 'owner','is_active', 'location')
