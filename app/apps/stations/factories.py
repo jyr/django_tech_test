@@ -2,6 +2,7 @@
 import factory
 
 from .models import Location, Station
+from apps.users.factories import UserFactory
 
 
 class LocationFactory(factory.django.DjangoModelFactory):
@@ -12,6 +13,7 @@ class LocationFactory(factory.django.DjangoModelFactory):
     name = factory.Faker('slug')
     latitude = factory.Faker('latitude')
     longitude = factory.Faker('longitude')
+    owner = UserFactory()
 
 
 class StationFactory(factory.django.DjangoModelFactory):
@@ -23,3 +25,4 @@ class StationFactory(factory.django.DjangoModelFactory):
     location = LocationFactory()
     order = factory.Faker('random_number')
     is_active = factory.Faker('boolean')
+    owner = UserFactory()

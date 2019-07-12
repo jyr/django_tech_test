@@ -5,10 +5,11 @@ from apps.stations.models import Location, Station
 
 
 class LocationSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Location
-        exclude = ('id', )
+        fields = ('name', 'owner','latitude', 'longitude')
 
 class StationSerializer(serializers.ModelSerializer):
 

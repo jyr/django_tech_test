@@ -30,7 +30,7 @@ class LocationEndpointTest(APITestCase):
     def test_get_all_locations(self):
         """Test api can all locations."""
 
-        LocationFactory()
+        LocationFactory(owner=self.user)
 
         response = self.client.get(self.url)
         response = response.json()
@@ -43,7 +43,8 @@ class LocationEndpointTest(APITestCase):
         data = {
             "name": "Urbvan",
             "latitude": 19.388401,
-            "longitude": -99.227358
+            "longitude": -99.227358,
+            "owner": self.user.id
         }
 
         response = self.client.post(self.url, data, format='json')
@@ -65,7 +66,7 @@ class LocationDetailEndpointTest(APITestCase):
         self.client.credentials(
             HTTP_AUTHORIZATION="Urbvan {}".format(self.user_token.key)
         )
-        self.location = LocationFactory()
+        self.location = LocationFactory(owner=self.user)
 
         self.url = reverse(
             "api_v1_stations:v1_retrieve_location",
@@ -86,10 +87,12 @@ class LocationDetailEndpointTest(APITestCase):
         data = {
             "name": "My new location",
             "latitude": "1.120000000000003",
-            "longitude": "1.0000000000000004"
+            "longitude": "1.0000000000000004",
+            "owner": self.user.id
         }
 
         response = self.client.put(self.url, data, format='json')
+
         new_name_location = response.data['body']['results'][0]['name']
         self.location.refresh_from_db()
 
@@ -121,7 +124,7 @@ class LocationDetailEndpointTest(APITestCase):
     def test_delete_a_location(self):
         """Test api can delete a location."""
 
-        LocationFactory()
+        LocationFactory(owner=self.user)
 
         locations = Location.objects.all()
         location_id = self.location.id
@@ -145,9 +148,9 @@ class StationEndpointTest(APITestCase):
 
         self.user = UserFactory()
         self.user_token = TokenFactory(user=self.user)
-
+        self.location = LocationFactory(owner=self.user)
         for _ in range(3):
-            StationFactory(location=LocationFactory())
+            StationFactory(location_id=1, owner_id=1)
 
         self.client.credentials(
             HTTP_AUTHORIZATION="Urbvan {}".format(self.user_token.key)
@@ -165,9 +168,10 @@ class StationEndpointTest(APITestCase):
         """Test api can create a new station."""
 
         data = {
-            "location": LocationFactory().id,
+            "location": self.location.id,
             "order": 12,
-            "is_active": False
+            "is_active": False,
+            "owner": self.user.id
         }
 
         response = self.client.post(self.url, data, format='json')
@@ -189,8 +193,8 @@ class StationDetailEndpointTest(APITestCase):
         self.client.credentials(
             HTTP_AUTHORIZATION="Urbvan {}".format(self.user_token.key)
         )
-
-        self.station = StationFactory(location=LocationFactory())
+        self.location = LocationFactory(owner=self.user)
+        self.station = StationFactory(location=self.location, owner=self.user)
 
         self.url = reverse(
            "api_v1_stations:v1_retrieve_station",
@@ -211,7 +215,8 @@ class StationDetailEndpointTest(APITestCase):
         data = {
                 "location": LocationFactory().id,
                 "order": 12,
-                "is_active": False
+                "is_active": False,
+                "owner": self.user.id
         }
 
         response = self.client.put(self.url, data, format='json')

@@ -11,6 +11,7 @@ from .mixins import (
     )
 from .schemas import PaginationResponse
 from .authentication import CustomTokenAuthentication
+from urbvan.permissions import ObjectPermissionsEndpoint, IsOwnerOrReadOnly
 
 
 class CreateAPIView(CreateModelMixin, GenericAPIView):
@@ -18,7 +19,11 @@ class CreateAPIView(CreateModelMixin, GenericAPIView):
     Concrete view for creating a model instance.
     """
     authentication_classes = (CustomTokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (
+        IsAuthenticated,
+        ObjectPermissionsEndpoint,
+        IsOwnerOrReadOnly
+    )
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -30,7 +35,11 @@ class ListAPIView(ListModelMixin, GenericAPIView):
     """
 
     authentication_classes = (CustomTokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (
+        IsAuthenticated,
+        ObjectPermissionsEndpoint,
+        IsOwnerOrReadOnly
+    )
 
     pagination_class = PaginationResponse
 
@@ -48,7 +57,11 @@ class RetrieveUpdateDestroyAPIView(
     """
 
     authentication_classes = (CustomTokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (
+        IsAuthenticated,
+        ObjectPermissionsEndpoint,
+        IsOwnerOrReadOnly
+    )
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)

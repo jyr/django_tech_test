@@ -1,9 +1,12 @@
 # coding: utf8
+from django.shortcuts import get_object_or_404 as _get_object_or_404
+
 from rest_framework import (mixins, status)
 from rest_framework.response import Response
 
 from .utils import (render_to_response, render_response_error)
 
+from apps.stations.models import Location
 
 class CreateModelMixin(mixins.CreateModelMixin):
     """
@@ -77,8 +80,10 @@ class UpdateModelMixin(object):
     """
 
     def update(self, request, *args, **kwargs):
+        #print(kwargs, flush=True)
+        #print(self, flush=True)
         partial = kwargs.pop('partial', False)
-        instance = self.get_object()
+        instance = _get_object_or_404(Location, pk=kwargs["pk"])
 
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
@@ -103,7 +108,7 @@ class DestroyModelMixin(object):
     """
 
     def destroy(self, request, *args, **kwargs):
-        instance = self.get_object()
+        instance = _get_object_or_404(Location, pk=kwargs["pk"])
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
