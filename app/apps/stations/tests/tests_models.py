@@ -1,7 +1,7 @@
 from django.test import TestCase, tag
 
 from apps.stations.models import Location, Station
-
+from apps.users.factories import UserFactory
 
 @tag('models')
 class LocationTest(TestCase):
@@ -11,10 +11,12 @@ class LocationTest(TestCase):
     """
 
     def setUp(self):
+        owner = UserFactory()
         self.default_data = {
             "name": "My new location",
             "latitude": "1.120000000000003",
-            "longitude": "1.0000000000000004"
+            "longitude": "1.0000000000000004",
+            "owner": owner
         }
 
     def test_generate_prefix_correctly(self):
