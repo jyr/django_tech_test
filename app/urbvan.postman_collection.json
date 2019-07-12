@@ -16,28 +16,25 @@
 					"formdata": [
 						{
 							"key": "username",
-							"value": "admin",
+							"value": "my_user_name",
 							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "admin",
+							"value": "qwerty123.",
 							"description": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api-token-auth/",
+					"raw": "http://urbvan-dev.com/api-token-auth/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api-token-auth",
 						""
@@ -54,7 +51,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+						"value": "Urbvan 71bb9006ed96f126a85ff81ad231013b234ca874"
 					},
 					{
 						"key": "Content-Type",
@@ -66,15 +63,12 @@
 					"raw": "{\n    \"name\": \"laa\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/locations/",
+					"raw": "http://urbvan-dev.com/api/v1/locations/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -93,7 +87,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+						"value": "Urbvan 71bb9006ed96f126a85ff81ad231013b234ca874"
 					},
 					{
 						"key": "Content-Type",
@@ -102,18 +96,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"laapost\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+					"raw": "{\n    \"name\": \"my location\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/locations/",
+					"raw": "http://urbvan-dev.com/api/v1/locations/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -132,7 +123,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+						"value": "Urbvan 71bb9006ed96f126a85ff81ad231013b234ca874"
 					},
 					{
 						"key": "Content-Type",
@@ -144,20 +135,17 @@
 					"raw": "{\n    \"name\": \"laa\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_201975346169180d1fe/",
+					"raw": "http://urbvan-dev.com/api/v1/locations/loc_201971218243500f3ae95/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"locations",
-						"loc_201975346169180d1fe",
+						"loc_201971218243500f3ae95",
 						""
 					]
 				},
@@ -172,7 +160,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+						"value": "Urbvan 71bb9006ed96f126a85ff81ad231013b234ca874"
 					},
 					{
 						"key": "Content-Type",
@@ -184,20 +172,17 @@
 					"raw": "{\n    \"name\": \"put1\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_201975346169180d1fe/",
+					"raw": "http://urbvan-dev.com/api/v1/locations/loc_201971218243500f3ae95/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"locations",
-						"loc_201975346169180d1fe",
+						"loc_201971218243500f3ae95",
 						""
 					]
 				},
@@ -212,7 +197,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+						"value": "Urbvan 71bb9006ed96f126a85ff81ad231013b234ca874"
 					},
 					{
 						"key": "Content-Type",
@@ -221,23 +206,20 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"laapatch\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
+					"raw": "{\n    \"name\": \"otro\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\",\n    \"owner\": 1\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_20197445414d016424/",
+					"raw": "http://urbvan-dev.com/api/v1/locations/loc_201971218243500f3ae95/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"locations",
-						"loc_20197445414d016424",
+						"loc_201971218243500f3ae95",
 						""
 					]
 				},
@@ -252,7 +234,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+						"value": "Urbvan 71bb9006ed96f126a85ff81ad231013b234ca874"
 					},
 					{
 						"key": "Content-Type",
@@ -264,20 +246,17 @@
 					"raw": "{\n    \"name\": \"laapatch\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/locations/loc_20197445414d016424/",
+					"raw": "http://urbvan-dev.com/api/v1/locations/loc_201971218243500f3ae95/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"locations",
-						"loc_20197445414d016424",
+						"loc_201971218243500f3ae95",
 						""
 					]
 				},
@@ -292,20 +271,17 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 3b4b27960af52cbf718678099d500ae8df787abe"
+						"value": "Urbvan 300adc593b56343fffbbf7e98896539a38658bce"
 					}
 				],
 				"body": {},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/stations/",
+					"raw": "http://urbvan-dev.com/api/v1/stations/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -324,7 +300,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+						"value": "Urbvan 300adc593b56343fffbbf7e98896539a38658bce"
 					},
 					{
 						"key": "Content-Type",
@@ -336,22 +312,25 @@
 					"formdata": [
 						{
 							"key": "location",
-							"value": "loc_2019754374895092864",
+							"value": "loc_2019712333931f8a784",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "owner",
+							"value": "1",
 							"description": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/stations/",
+					"raw": "http://urbvan-dev.com/api/v1/stations/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -370,7 +349,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Urbvan 75be6d84d8fee7b761ea9963447806124bb4dfe9"
+						"value": "Urbvan 300adc593b56343fffbbf7e98896539a38658bce"
 					},
 					{
 						"key": "Content-Type",
@@ -382,20 +361,17 @@
 					"raw": "{\n    \"name\": \"laa\",\n    \"latitude\": \"1.120000000000003\",\n    \"longitude\": \"1.0000000000000004\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"raw": "http://urbvan-dev.com/api/v1/stations/sta_2019712337268d4fecbb/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"stations",
-						"sta_2019762443423d573b2",
+						"sta_2019712337268d4fecbb",
 						""
 					]
 				},
@@ -422,15 +398,12 @@
 					"raw": "{\n                \"location\": \"loc_2019754374895092864\",\n                \"id\": \"sta_2019762443423d573b2\",\n                \"order\": 10,\n                \"is_active\": false\n            }"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"raw": "http://urbvan-dev.com/api/v1/stations/sta_2019762443423d573b2/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -462,15 +435,12 @@
 					"raw": "{\n                \"location\": \"loc_2019754374895092864\",\n                \"id\": \"sta_2019762443423d573b2\",\n                \"order\": 10,\n                \"is_active\": falsesss\n            }"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"raw": "http://urbvan-dev.com/api/v1/stations/sta_2019762443423d573b2/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -502,15 +472,12 @@
 					"raw": "{\n                \"location\": \"loc_2019754374895092864\",\n                \"id\": \"sta_2019762443423d573b2\",\n                \"order\": 10,\n                \"is_active\": false\n            }"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/stations/sta_2019762443423d573b2/",
+					"raw": "http://urbvan-dev.com/api/v1/stations/sta_2019762443423d573b2/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -551,15 +518,12 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/lines/",
+					"raw": "http://urbvan-dev.com/api/v1/lines/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -599,15 +563,12 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/lines/",
+					"raw": "http://urbvan-dev.com/api/v1/lines/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -647,15 +608,12 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544328c0870b8c/",
+					"raw": "http://urbvan-dev.com/api/v1/lines/lin_20197544328c0870b8c/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -696,15 +654,12 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544328c0870b8c/",
+					"raw": "http://urbvan-dev.com/api/v1/lines/lin_20197544328c0870b8c/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -745,15 +700,12 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544328c0870b8c/",
+					"raw": "http://urbvan-dev.com/api/v1/lines/lin_20197544328c0870b8c/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -794,15 +746,12 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/lines/lin_20197544239f1e68d10/",
+					"raw": "http://urbvan-dev.com/api/v1/lines/lin_20197544239f1e68d10/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"urbvan-dev",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
