@@ -3,3 +3,4 @@ djangorestframework==3.8.2
 marshmallow==2.15.6
 factory-boy==2.11.1
 django-guardian==2.0.0
+djangorestframework-guardian==0.1.1
