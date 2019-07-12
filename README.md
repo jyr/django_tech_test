@@ -1,7 +1,7 @@
 # Urbvan Docker Compose
 
 |Service| Service Name | Host | Port |
-|---|---|---|
+|---|---|---|---|
 | Web | web | urbvan-dev.com | 80 |
 | Proxy | app | api.urbvan-dev.com | 8000 |
 
